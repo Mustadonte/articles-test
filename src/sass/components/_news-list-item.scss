@@ -1,0 +1,8 @@
+.news-list-item__button {
+    display: flex;
+    padding: 0;
+    margin-left: 25px;
+    background-color: transparent;
+    border: none;
+    @include text($title-text-color, 16px, 700);
+}
