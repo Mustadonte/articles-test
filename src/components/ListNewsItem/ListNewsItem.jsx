@@ -16,7 +16,7 @@ export const ListNewsItem = ({ imageUrl, updatedAt, title, summary, id }) => {
   const date = moment.utc(updatedAt).format('MMM Do, YYYY');
 
   return (
-    <Card sx={{ maxWidth: 400, height: 530 }}>
+    <Card sx={{ maxWidth: 400, height: 530 }} onClick={clickHandler}>
       <CardActionArea>
         <CardMedia component="img" height="217" image={imageUrl} alt={title} />
         <CardContent sx={{ padding: '25px' }}>
