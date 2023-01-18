@@ -4,13 +4,14 @@ import { useEffect, useState } from 'react';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { lorem } from 'lorem';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 export const Article = () => {
   const navigate = useNavigate();
   const { articleId } = useParams();
   const [article, setArticle] = useState({});
   const { imageUrl, title } = article;
   const clickHandler = () => {
-    navigate(-1);
+    navigate(-2);
   };
 
   useEffect(() => {
@@ -19,12 +20,16 @@ export const Article = () => {
         setArticle(result);
       })
       .catch(error => console.log(error.message));
+    window.scroll(0, 0);
   }, [articleId]);
 
-  console.log(article);
   return (
     <>
-      <img src={imageUrl} alt={title} className="article__img" />
+      {imageUrl ? (
+        <img src={imageUrl} alt="article background" className="article__img" />
+      ) : (
+        <Loader />
+      )}
       <article className="article__content">
         <h2 className="article__title">{title}</h2>
         <p className="article__text">{lorem}</p>
