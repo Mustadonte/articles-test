@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { ListNewsItem } from 'components/ListNewsItem/ListNewsItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles } from 'redux/news/news-operations';

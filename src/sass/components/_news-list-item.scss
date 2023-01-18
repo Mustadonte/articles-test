@@ -6,3 +6,22 @@
     border: none;
     @include text($title-text-color, 16px, 700);
 }
+
+.news-list-item__icon {
+
+color: #363636;
+}
+
+.news-list-item__date {
+    display: flex;
+    align-items: center;
+    row-gap: 8px;
+    margin-bottom: 24px;
+}
+
+.news-list-item__date--text{
+   margin-left: 8px;
+    color: #363636
+}
+
+// 363636

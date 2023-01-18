@@ -18,8 +18,9 @@ margin-bottom: 10px;
 }
 
 .filter__input {
-width: 100%;;
-padding: 13px 0px 13px 60px;;
+width: 100%;
+padding: 13px 0px 13px 60px;
+@include text(#575757, 16);
 border: 1px solid #EAEAEA;
 box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
 border-radius: 5px;
@@ -30,7 +31,7 @@ border-radius: 5px;
     background-color: transparent;
     border: 0px;
     padding: 0;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     left: 20px;
     cursor: pointer;

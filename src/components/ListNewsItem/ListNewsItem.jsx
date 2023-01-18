@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import { ReactComponent as DateIcon } from '../../icons/date-icon.svg';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import moment from 'moment';
 import { CardActionArea, CardActions } from '@mui/material';
@@ -13,13 +14,17 @@ export const ListNewsItem = ({ imageUrl, updatedAt, title, summary, id }) => {
     navigate(`article/${id}`);
   };
   const date = moment.utc(updatedAt).format('MMM Do, YYYY');
-  console.log(date);
+
   return (
     <Card sx={{ maxWidth: 400, height: 530 }}>
       <CardActionArea>
         <CardMedia component="img" height="217" image={imageUrl} alt={title} />
         <CardContent sx={{ padding: '25px' }}>
-          <p>{date}</p>
+          <div className="news-list-item__date">
+            <DateIcon className="news-list-item__icon" />
+            <p className="news-list-item__date--text">{date}</p>
+          </div>
+
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
